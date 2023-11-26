@@ -5,6 +5,8 @@ odoo.define('no_seconds_datetime.no_seconds_datetime', function (require) {
     var FieldDateTime = require('web.basic_fields').FieldDateTime;
     var datepicker = require('web.datepicker');
     var time = require('web.time');
+    var session = require('web.session');
+
 
     var NoSecondsDateTimeWidget = datepicker.DateWidget.extend({
         type_of_date: "datetime",
@@ -39,7 +41,7 @@ odoo.define('no_seconds_datetime.no_seconds_datetime', function (require) {
 
         _renderReadonly: function () {
             if (this.value) {
-                var session = require('web.session');
+
                 var format = time.getLangDatetimeFormat()
                 var value = this.value.clone().add(session.getTZOffset(this.value), 'minutes')
                 var v = value.format(format.replace(":ss", "").replace("ss秒", ""));
