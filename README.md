@@ -1,1 +1,1 @@
-# my_addons
+# Odoo 开源通用模块
