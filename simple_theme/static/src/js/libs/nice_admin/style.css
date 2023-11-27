@@ -42,8 +42,8 @@ h6 {
 # Main
 --------------------------------------------------------------*/
 #main {
-  margin-top: 60px;
-  padding: 20px 30px;
+  /*margin-top: 46px;*/
+  /*padding: 20px 30px;*/
   transition: all 0.3s;
 }
 
@@ -599,7 +599,7 @@ h6 {
 --------------------------------------------------------------*/
 .sidebar {
   position: fixed;
-  top: 60px;
+  top: 46px;
   left: 0;
   bottom: 0;
   width: 240px;
@@ -633,7 +633,7 @@ h6 {
 
   #main,
   #footer {
-    margin-left: 300px;
+    margin-left: 242px;
   }
 }
 

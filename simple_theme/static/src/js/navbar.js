@@ -3,12 +3,14 @@
 import { patch } from '@web/core/utils/patch';
 import { NavBar } from "@web/webclient/navbar/navbar";
 import { SimpleThemeDropdownItem } from './dropdown_item'
+import { SimpleThemeDropdown } from './dropdown'
 
 patch(NavBar,  {
     template: "simple_theme.NavBar",
     components: {
         ...NavBar.components,
-        SimpleThemeDropdownItem
+        SimpleThemeDropdownItem,
+        SimpleThemeDropdown
     },
 });
 
