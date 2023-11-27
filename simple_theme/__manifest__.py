@@ -21,6 +21,8 @@
             'simple_theme/static/src/js/webclient.xml',
             'simple_theme/static/src/js/dropdown_item.js',
             'simple_theme/static/src/js/dropdown_item.xml',
+            'simple_theme/static/src/js/dropdown.js',
+            'simple_theme/static/src/js/dropdown.xml',
             'simple_theme/static/src/js/action_container.js',
         ],
 

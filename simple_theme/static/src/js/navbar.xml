@@ -1,39 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
     <t t-name="simple_theme.NavBar.AppsMenu" owl="1">
-      <t t-portal="'#sidebar'">
+        <SimpleThemeDropdown hotkey="'h'" title="'Home Menu'" class="'o_navbar_apps_menu'">
+          <t t-set-slot="toggler">
+            <i class="oi oi-apps" />
+          </t>
+        </SimpleThemeDropdown>
+        <t t-portal="'#sidebar'">
 
-      <SimpleThemeDropdownItem
-              t-foreach="apps"
-              t-as="app"
-              t-key="app.id"
-              class="{ 'nav-link':true, 'collapsed':true, 'o_app': true, focus: menuService.getCurrentApp() === app }"
-              href="getMenuItemHref(app)"
-              t-esc="app.name"
-              dataset="{ menuXmlid: app.xmlid, section: app.id }"
-              onSelected="() => this.onNavBarDropdownItemSelection(app)"
-              webIconData="app.webIconData"
-      />
-    </t>
+            <SimpleThemeDropdownItem
+                  t-foreach="apps"
+                  t-as="app"
+                  t-key="app.id"
+                  class="{ 'nav-link':true, 'collapsed':true, 'o_app': true, focus: menuService.getCurrentApp() === app }"
+                  href="getMenuItemHref(app)"
+                  t-esc="app.name"
+                  dataset="{ menuXmlid: app.xmlid, section: app.id }"
+                  onSelected="() => this.onNavBarDropdownItemSelection(app)"
+                  webIconData="app.webIconData"
+            />
+        </t>
   </t>
 
-    <t t-name="simple_theme.NavBar" owl="1">
-    <header class="o_navbar fixed-top d-flex align-items-center" id="header" t-ref="root" style="height: 60px;">
-      <nav
-              class="h-100 o_main_navbar align-items-center w-100 "
-              data-command-category="navbar" style="height: 60px"
-      >
-      <div class="d-flex align-items-center justify-content-between">
-<!--        <a href="index.html" class="logo d-flex align-items-center">-->
-          <!--           <img src="assets/img/logo.png" alt="">-->
-          <!--          <span class="d-none d-lg-block">NiceAdmin</span>-->
-          <!--        </a>-->
+<t t-name="simple_theme.NavBar" owl="1">
+    <header class="o_navbar" id="header" t-ref="root" >
+      <nav class="o_main_navbar"
+              data-command-category="navbar" >
 
-          <div class="o-dropdown dropdown o_navbar_apps_menu o-dropdown--no-caret" t-on-click="onToggleSidebarBtnClick">
-          <button class="dropdown-toggle" title="Home Menu" data-hotkey="h" tabindex="0" aria-expanded="false">
-            <i class="oi oi-apps"></i>
-          </button></div>
-        </div>
           <!-- Apps Menu -->
           <t t-call="simple_theme.NavBar.AppsMenu">
             <t t-set="apps" t-value="getApps()"/>
@@ -63,7 +56,7 @@
         </div>
       </nav>
     </header>
-  </t>
+</t>
 
 
 </templates>

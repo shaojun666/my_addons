@@ -2,7 +2,7 @@
 <templates xml:space="preserve">
 
   <t t-name="simple_theme.SimpleThemeDropdownItem" owl="1">
-       <ul class="sidebar-nav" id="sidebar-nav">
+       <ul class="sidebar-nav" >
               <li class="nav-item">
         <t
           t-tag="props.href ? 'a' : 'span'"
