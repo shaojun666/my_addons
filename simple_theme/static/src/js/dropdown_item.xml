@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+<t t-name="simple_theme.SimpleThemeDropdownItem" owl="1">
+
+        <li class="nav-item">
+            <t
+                t-tag="props.href ? 'a' : 'span'"
+                t-att-href="props.href"
+                class="dropdown-item"
+                role="menuitem"
+                t-on-click="onClick"
+                t-att-title="props.title"
+                t-att-data-hotkey="props.hotkey"
+                tabindex="0"
+                >
+                <img t-if="props.webIconData" style="width:28px;" t-attf-src="data:image/png;base64,{{ props.webIconData }}"/>
+               <span> <t t-slot="default" /></span>
+            </t>
+       </li>
+
+</t>
+
+
+
+</templates>
+
+
