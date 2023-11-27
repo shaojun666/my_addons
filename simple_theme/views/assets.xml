@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   
+    <template id="custom_theme_assets_common" name="custom theme assets" inherit_id="web.assets_common">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/scss" href="/simple_theme/static/src/js/libs/nice_admin/style.css"/>
+            <script type="text/javascript" src="/simple_theme/static/src/js/action_manager.js"></script>
+            <script type="text/javascript" src="/simple_theme/static/src/js/web_client.js"></script>
+            <script type="text/javascript" src="/simple_theme/static/src/js/menu.js"></script>
+            <script type="text/javascript" src="/simple_theme/static/src/js/apps_menu.js"></script>
+        </xpath>
+    </template>
+
+
+
+    
+</odoo>
