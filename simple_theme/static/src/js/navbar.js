@@ -19,9 +19,14 @@ patch(NavBar.prototype, 'simple_theme.NavBar', {
     getApps() {
         const apps = this.menuService.getApps();
         const newApps = apps.map(function (item) {
-            const prefix = item.webIconData.startsWith('P') ? 'data:image/svg+xml;base64,' : 'data:image/png;base64,';
-            const webIconData = item.webIconData.startsWith('data:image') ? item.webIconData : prefix + item.webIconData.replace(/\s/g, '');
-            item['webIconData'] = webIconData;
+            if (item.webIconData) {
+                const prefix = item.webIconData.startsWith('P') ? 'data:image/svg+xml;base64,' : 'data:image/png;base64,';
+                const webIconData = item.webIconData.startsWith('data:image') ? item.webIconData : prefix + item.webIconData.replace(/\s/g, '');
+                item['webIconData'] = webIconData;
+            }else {
+                 item['webIconData'] = '';
+            }
+
             return item
 
         })
