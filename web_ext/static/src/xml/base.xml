@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="UserMenu.Actions">
+        <!--删除文档-->
+        <t t-jquery="a[data-menu='documentation']" t-operation="replace">
+
+        </t>
+        <!--删除支持-->
+        <t t-jquery="a[data-menu='support']" t-operation="replace">
+
+        </t>
+         <!--删除账户-->
+        <t t-jquery="a[data-menu='account']" t-operation="replace">
+            <div role="separator" class="dropdown-divider"/>
+        </t>
+    </t>
+</templates>
