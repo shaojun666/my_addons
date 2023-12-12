@@ -33,7 +33,7 @@
 
             <!-- Apps Menu -->
               <t t-call="simple_theme.NavBar.AppsMenu">
-              <t t-set="apps" t-value="menuService.getApps()"/>
+              <t t-set="apps" t-value="getApps()"/>
             </t>
 
               <!-- App Brand -->

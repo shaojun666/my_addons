@@ -4,7 +4,7 @@ import {patch} from '@web/core/utils/patch';
 import {NavBar} from "@web/webclient/navbar/navbar";
 import {SimpleThemeDropdownItem} from "./dropdown_item"
 import {SimpleThemeDropdown} from "./dropdown"
-import { useEffect } from "@web/core/utils/hooks";
+import {useEffect} from "@web/core/utils/hooks";
 
 export class SimpleThemeMenuDropdown extends SimpleThemeDropdown {
     setup() {
@@ -19,6 +19,7 @@ export class SimpleThemeMenuDropdown extends SimpleThemeDropdown {
         );
     }
 }
+
 SimpleThemeMenuDropdown.props.xmlid = {
     type: String,
     optional: true,
@@ -43,7 +44,6 @@ export class SimpleThemeMenuItem extends SimpleThemeDropdownItem {
 }
 
 
-
 patch(NavBar, 'simple_theme/static/src/js/libs/navbar.js', {
     template: "simple_theme.NavBar",
     components: {
@@ -55,17 +55,18 @@ patch(NavBar, 'simple_theme/static/src/js/libs/navbar.js', {
 
 patch(NavBar.prototype, 'simple_theme/static/src/js/libs/navbar.js', {
 
-    // getApps() {
-    //     const apps = this.menuService.getApps();
-    //     const newApps = apps.map(function (item) {
-    //         const prefix = item.webIconData.startsWith('P') ? 'data:image/svg+xml;base64,' : 'data:image/png;base64,';
-    //         const webIconData = item.webIconData.startsWith('data:image') ? item.webIconData : prefix + item.webIconData.replace(/\s/g, '');
-    //         item['webIconData'] = webIconData;
-    //         return item
-    //
-    //     })
-    //     return newApps
-    // },
+    getApps() {
+        const apps = this.menuService.getApps();
+        const newApps = apps.map(function (item) {
+            if (!item.webIconData) {
+                item['webIconData'] = '';
+            }
+
+            return item
+
+        })
+        return newApps
+    },
 
     onToggleSidebarBtnClick(event) {
 
