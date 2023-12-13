@@ -8,7 +8,7 @@
     "version": "16.0.0.1",
     "depends": ["base", "web"],
     "data": [
-
+        "views/webclient_templates.xml",
     ],
     'assets': {
         'web.assets_backend': [
