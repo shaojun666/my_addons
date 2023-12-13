@@ -10,5 +10,8 @@
     "qweb": [
         "static/src/xml/base.xml",
     ],
+    'data': [
+        "views/webclient_templates.xml",
+    ],
     'bootstrap': True,
 }
