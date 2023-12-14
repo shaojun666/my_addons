@@ -13,6 +13,7 @@
     'assets': {
         'web.assets_backend': [
             'web_ext/static/src/js/user_menu.js',
+            'web_ext/static/src/js/web_client.js',
         ]
     },
     'bootstrap': True,
