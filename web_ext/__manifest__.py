@@ -11,6 +11,7 @@
         "static/src/xml/base.xml",
     ],
     'data': [
+        "views/assets.xml",
         "views/webclient_templates.xml",
     ],
     'bootstrap': True,

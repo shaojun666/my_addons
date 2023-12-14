@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   
+    <template id="web_ext_assets_common" name="web ext theme assets" inherit_id="web.assets_common">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/web_ext/static/src/js/web_client.js"></script>
+        </xpath>
+    </template>
+
+    
+</odoo>
